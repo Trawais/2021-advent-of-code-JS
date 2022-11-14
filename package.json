@@ -1,0 +1,23 @@
+{
+  "name": "2021-advent-of-code-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Trawais/2021-advent-of-code-JS.git"
+  },
+  "author": "",
+  "type": "module",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Trawais/2021-advent-of-code-JS/issues"
+  },
+  "homepage": "https://github.com/Trawais/2021-advent-of-code-JS#readme",
+  "dependencies": {
+    "mocha": "^10.1.0"
+  }
+}
