@@ -1,1 +1,1 @@
-# 2022-advent-of-code-JS
+# 2021-advent-of-code-JS
