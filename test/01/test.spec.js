@@ -12,7 +12,19 @@ describe('Task 01', () => {
 
     it('Solution for my input', () => {
       const task = new Task01("./test/01/input.txt");
-      assert.equal(task.depthMeasurement(), 7);
+      assert.equal(task.depthMeasurement(), 1195);
+    });
+  });
+
+  describe('How many sums are larger than the previous sum?', () => {
+    it('Given example', () => {
+      const task = new Task01("./test/01/input-example.txt");
+      assert.equal(task.threeMeasurement(), 5);
+    });
+
+    it('Solution for my input', () => {
+      const task = new Task01("./test/01/input.txt");
+      assert.equal(task.threeMeasurement(), 1235);
     });
   });
 });
