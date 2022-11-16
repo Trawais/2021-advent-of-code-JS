@@ -1,6 +1,5 @@
 import assert from "node:assert";
 import { Task01 } from "./Task01.js";
-import * as fs from 'fs';
 import { it } from "mocha";
 
 describe('Task 01', () => {
