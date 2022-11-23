@@ -77,7 +77,7 @@ export class Task03 {
         return parseInt(setOfNumbers[0], 2);
       }
     }
-    throw 'Something terrible happened.';
+    throw 'Something even more terrible happened.';
   }
 
   #getNewSetOfBinaryNumbers(currentResult, bit, position) {
