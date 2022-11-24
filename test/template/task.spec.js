@@ -1,16 +1,16 @@
 import assert from 'node:assert';
 import { Solution } from './Solution.js'
 
-describe('Task XX', () => {
-  describe('What is the power consumption of the submarine?', () => {
+describe('Task {{XX}}', () => {
+  describe('Text description of first part goes here', () => {
     it('Given example', () => {
-      const task = new Solution('./test/XX/input-example.txt');
-      assert.equal(task.firstPart(), 123);
+      const solution = new Solution('./test/{{XX}}/input-example.txt');
+      assert.equal(solution.firstPart(), 123);
     });
 
     it('Solution for the first part', () => {
-      const task = new Solution('./test/XX/input.txt');
-      assert.equal(task.firstPart(), 456);
+      const solution = new Solution('./test/{{XX}}/input.txt');
+      assert.equal(solution.firstPart(), 456);
     });
   });
 });
