@@ -8,4 +8,11 @@ export class Solution {
     });
   }
 
+  firstPart() {
+    return 1;
+  }
+
+  secondPart() {
+    return 2;
+  }
 }

@@ -13,4 +13,16 @@ describe('Task {{XX}}', () => {
       assert.equal(solution.firstPart(), 456);
     });
   });
+
+  describe('Text description of second part goes here', () => {
+    it('Given example', () => {
+      const solution = new Solution('./test/{{XX}}/input-example.txt');
+      assert.equal(solution.firstPart(), 123);
+    });
+
+    it('Solution for the second part', () => {
+      const solution = new Solution('./test/{{XX}}/input.txt');
+      assert.equal(solution.firstPart(), 456);
+    });
+  });
 });
