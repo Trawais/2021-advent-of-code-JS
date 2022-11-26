@@ -36,14 +36,46 @@ export class Solution {
       this.playNumber(this.input[i]);
       const winner = this.getWinner();
       if (typeof winner != 'undefined') {
-        return this.input[i] * this.sumOfBingo(winner);
+        return this.input[i] * this.sumOfBingo(this.bingos[winner]);
       }
     }
   }
 
+  secondPart() {
+    let winnerCard = undefined;
+    let lastWinningCard = [];
+    let lastNumber = undefined;
+    for (let i = 0; i < this.input.length; i++) {
+      this.playNumber(this.input[i]);
+      winnerCard = this.removeAllWinnersAndReturnLast();
+      if (typeof winnerCard != 'undefined') { // Some bingo card is winning
+        lastWinningCard = winnerCard
+        if (this.bingos.length == 0) {
+          lastNumber = this.input[i];
+          break;
+        }
+      }
+    }
+    lastNumber ??= this.input[this.input.length - 1];
+    return lastNumber * this.sumOfBingo(lastWinningCard);
+  }
+
+  removeAllWinnersAndReturnLast() {
+    let winner = undefined;
+    let lastWinnerCard = undefined;
+    do {
+      winner = this.getWinner();
+      if (typeof winner != 'undefined') {
+        lastWinnerCard = JSON.parse(JSON.stringify(this.bingos[winner]))
+        this.bingos.splice(winner, 1);
+      }
+    } while (typeof winner != 'undefined');
+    return lastWinnerCard;
+  }
+
   sumOfBingo(winnerCard) {
     let sum = 0;
-    this.bingos[winnerCard].forEach((row) => {
+    winnerCard.forEach((row) => {
       row.forEach((el) => {
         if (el != 'X') {
           sum += parseInt(el, 10);
