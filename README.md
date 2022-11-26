@@ -18,3 +18,16 @@ Just click magic "Start Debugging" green triangle button in the section "Run and
 Do not forget to place your breakpoint wisely.
 Also you must launch your debuggin session from the related `*.spec.js` file,
 because the current shown file is pasted into the debugging command and is passed as a argument to `mocha` framework.
+
+## How to prepare folder for the task?
+Change `00` to your desired task number in the command below and run it.
+Note: You must change it on two places.
+
+```
+TASK=00 docker run \
+  --env TASK --rm -v ${PWD}:/var/www -w /var/www \
+  -u $(id -u ${USER}):$(id -g ${USER}) \
+  -v $PWD:/repo \
+  hairyhenderson/gomplate:v3.11.3-alpine \
+  --input-dir /repo/test/template --output-dir /repo/test/00
+```
