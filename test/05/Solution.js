@@ -16,23 +16,27 @@ export class Solution {
 
   firstPart() {
      this.drawLines();
-     return 1;
+     return this.countIntersections();
   }
 
   drawLines() {
     this.lines.forEach(([[x1, y1], [x2, y2]]) => {
-      if (x1 != x2 && y1 != y2) return; // skip this line; It's not horizontal nor vertical line
-      
       // draw in x axis
-      if (x2 < x1) [x1, x2] = [x2, x1];
-      for (let x = x1; x <= x2; x++) {
-        this.drawDot(x, y1);
+      if (y1 == y2) {
+        if (x2 < x1) [x1, x2] = [x2, x1];
+        for (let x = x1; x <= x2; x++) {
+          this.drawDot(x, y1);
+        }
+        return;
       }
       
       // draw in y axis
-      if (y2 < y1) [y1, y2] = [y2, y1];
-      for (let y = y1; y <= y2; y++) {
-        this.drawDot(x1, y);
+      if (x1 == x2) {
+        if (y2 < y1) [y1, y2] = [y2, y1];
+        for (let y = y1; y <= y2; y++) {
+          this.drawDot(x1, y);
+        }
+        return;
       }
     })
   }
@@ -43,6 +47,16 @@ export class Solution {
     if (!this.canvas[y][x]) this.canvas[y][x] = 0;
 
     this.canvas[y][x] += 1;
+  }
+
+  countIntersections() {
+    let sum = 0;
+    this.canvas.forEach((row) => {
+      row.forEach((col) => {
+        if (col > 1) sum++;
+      })
+    })
+    return sum;
   }
 
   secondPart() {
